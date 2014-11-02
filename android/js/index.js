@@ -94,6 +94,7 @@ $( document ).on( "pageinit", "#sample-page", function() {
     };
 });
 
+itemCount = 0;
 
 var app = {
     // Application Constructor
@@ -137,10 +138,31 @@ var app = {
 
         scanner.scan( function (result) { 
 
+            var html1 = '<li> <a href="#demo-mail"><h3>Coke 251mL</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$1.55</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            var html2 = '<li> <a href="#demo-mail"><h3>Yoplait Cherry Yogurt</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$0.98</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            var html3 = '<li> <a href="#demo-mail"><h3>Yoplait Cherry Yogurt</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$2.07</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            
+            switch (itemCount) {
+            case 0:
+                $( "#list" ).append(html1);
+                break;
+            case 1:
+                $( "#list" ).append(html2);
+                break;
+            case 2:
+                $( "#list" ).append(html3);
+                break;
+            }
+
+            itemCount++;
+            $( "#list" ).listview( "refresh" ).find( ".ui-li.border" ).removeClass( "border" );
+
+            /*
             alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
+            */
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
@@ -171,3 +193,5 @@ var app = {
 
     }
 };
+
+app.initialize();
