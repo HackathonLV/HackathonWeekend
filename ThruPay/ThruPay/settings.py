@@ -1,5 +1,5 @@
 """
-Django settings for ExpressLane project.
+Django settings for ThruPay project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@dkh07gfy$2w6s**r6%usqy9^vn7+p1sd-ywzc302t@ha7&m$$'
+SECRET_KEY = 'ba)%rgh54eo3g54-=&lf^nht$jphrp$+%o2s__&82e5tt%a$ff'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ExpressLane.urls'
+ROOT_URLCONF = 'ThruPay.urls'
 
-WSGI_APPLICATION = 'ExpressLane.wsgi.application'
+WSGI_APPLICATION = 'ThruPay.wsgi.application'
 
 
 # Database
