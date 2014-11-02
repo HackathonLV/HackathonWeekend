@@ -24,6 +24,9 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+    'C:\Users\Ben\Documents\GitHub\HackathonWeekend\ThruPay'
+)
 ALLOWED_HOSTS = []
 
 
@@ -36,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'MainWebsite'
 )
 
 MIDDLEWARE_CLASSES = (
