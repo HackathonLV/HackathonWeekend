@@ -22,9 +22,9 @@ def buildRedirectUrl():
     state = time.time() * random.randint(0, 100)
     auth_url = "%s?client_id=%s&response_type=code&scope=%s&redirect_uri=%s&nonce=%s&state=%s" % (
                             endpoints['SANDBOX_ENDPOINT'],
-                            'ThruPay',
+                            'ThruPay_1',
                             'openid',
-                            'http://127.0.0.1:8000', # Fill this in with a real url
+                            'http://10.252.219.79:8000/', # Fill this in with a real url
                             nonce,
                             state)
 
@@ -32,11 +32,12 @@ def buildRedirectUrl():
 
 class RedirectView( TemplateView ):
     template_name = ''
-    ppaccess = PayPalAccess()
-    params = cgi.FieldStorage()
 
     def get(self, request, *args, **kwargs):
+        self.params = cgi.FieldStorage()
         if self.params.has_key('code'):
+            self.ppaccess = PayPalAccess()
+
             print 'Content-Type: text/plain'
             print ''
 
