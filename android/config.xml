@@ -21,7 +21,7 @@
        <param name="key" value="willoughby"/>
     </feature>
 
-    <preference name="Orientation" value="portrait" />
+    <preference name="orientation" value="portrait" />
 
     <preference name="phonegap-version" value="3.6.3" />
     <preference name="orientation"      value="default" />

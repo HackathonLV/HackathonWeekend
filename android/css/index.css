@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color:#E4E4E4;
+    background-color:#ffffff;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -178,4 +178,7 @@ li.ui-li.border {
 #confirm .topic.ui-li-desc {
     font-size: inherit; /* The cloned topic will have class ui-li-desc so we negate the font-size settings of this class */
     text-align: center;
+}
+#logo {
+    width: 150px;
 }
