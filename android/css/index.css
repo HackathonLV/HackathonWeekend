@@ -182,10 +182,6 @@ li.ui-li.border {
 #logo {
     width: 150px;
 }
-@font-face {
-    font-family: Days;
-    src: url(Days.otf);
-}
 #info {
-    font-family: Days;
+    display: none;
 }
