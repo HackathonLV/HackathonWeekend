@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    'C:\Users\Ben\Documents\GitHub\HackathonWeekend\ThruPay'
+    os.path.normpath(os.path.join(os.path.dirname(__file__), '..'))
 )
 ALLOWED_HOSTS = []
 

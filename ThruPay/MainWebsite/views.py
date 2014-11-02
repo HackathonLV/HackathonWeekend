@@ -1,15 +1,19 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
+from forms import *
 
 
-class UserLandingPage(TemplateView):
+class UserLandingPage(FormView):
     template_name = 'SampleLogon.html'
-    def get(self, request, *args, **kwargs):
-        user = request.user
-        password = request.password
+    form_class = LoginForm
 
-        context = {}
-        context['user'] = user
-        context['password'] = password
+    def form_valid(self, form):
+        user = form.cleaned_data['username']
+        password = form.cleaned_data['password']
 
-        return render(request, self.template_name, context)
+        print user, password
+
+        return render(self.request, self.template_name, {'form': form})
+
+    def form_invalid(self, form):
+        return render(self.request, self.template_name, {'form': form})
