@@ -138,9 +138,9 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            var html1 = '<li> <a href="#demo-mail"><h3>Coke 251mL</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$1.55</strong></p></a><a href="#" class="delete">Delete</a></li>';
-            var html2 = '<li> <a href="#demo-mail"><h3>Yoplait Cherry Yogurt</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$0.98</strong></p></a><a href="#" class="delete">Delete</a></li>';
-            var html3 = '<li> <a href="#demo-mail"><h3>Yoplait Cherry Yogurt</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$2.07</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            var html1 = '<li> <a href="#demo-mail"><h3>Coke 251mL</h3><img src="img/Coke.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$1.55</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            var html2 = '<li> <a href="#demo-mail"><h3>Yoplait Cherry</h3><img src="img/yogurt.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$0.98</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            var html3 = '<li> <a href="#demo-mail"><h3>Sprite 251mL</h3><img src="img/album-bb.jpg" class="ui-li-thumb" /><p class="ui-li-aside"><strong>$2.07</strong></p></a><a href="#" class="delete">Delete</a></li>';
             
             switch (itemCount) {
             case 0:
@@ -153,6 +153,8 @@ var app = {
                 $( "#list" ).append(html3);
                 break;
             }
+
+            $( "#list" ).hide();
 
             itemCount++;
             $( "#list" ).listview( "refresh" ).find( ".ui-li.border" ).removeClass( "border" );
