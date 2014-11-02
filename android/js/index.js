@@ -17,6 +17,22 @@
  * under the License.
  */
 
+/* Code to pull a list from XML
+
+
+$("#sample-page").live('pagebeforecreate', function() {
+     $.get('http://ontariosheep.org/mobile/data/data_olex.php',function(data){
+            $('#list').empty();
+            $(data).find('item').each(function(){
+                var $item = $(this);
+                var html = '';
+                html += '<li> <a href="#demo-mail"><h3>' + $item.attr('name') + '</h3>';
+                html += '<img src="img/'+ $item.attr('image') +'" class="ui-li-thumb" />';
+                html += '<p class="ui-li-aside"><strong>$' + $item.attr('price') + '</strong></p></a><a href="#" class="delete">Delete</a></li>';
+            }
+    }
+}*/
+
 $( document ).on( "pageinit", "#sample-page", function() {
     // Swipe to remove list item
     $( document ).on( "swipeleft swiperight", "#list li.ui-li", function( event ) {
@@ -36,7 +52,6 @@ $( document ).on( "pageinit", "#sample-page", function() {
             var listitem = $( this ).parent( "li.ui-li" );
             confirmAndDelete( listitem );
         });
-    }
     }
     function confirmAndDelete( listitem, transition ) {
         // Highlight the list item that will be removed
@@ -76,8 +91,9 @@ $( document ).on( "pageinit", "#sample-page", function() {
             listitem.removeClass( "ui-btn-down-d" );
             $( "#confirm #yes" ).off();
         });
-    }
+    };
 });
+
 
 var app = {
     // Application Constructor
