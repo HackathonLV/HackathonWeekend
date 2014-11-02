@@ -13,6 +13,7 @@ endpoints={
     'PROFILE_ENDPOINT': 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/userinfo',
     'LOGOUT_ENDPOINT': 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/endsession',
     'VALIDATE_ENDPOINT': 'https://www.paypal.com/webapps/auth/protocol/openidconnect/v1/checkid',
+    'SANDBOX_ENDPOINT' : 'https://sandbox.paypal.com/webapps/auth/protocol/openidconnect/v1/authorize'
 }
 
 
@@ -20,10 +21,10 @@ def buildRedirectUrl():
     nonce = time.time() * random.randint(0, 100)
     state = time.time() * random.randint(0, 100)
     auth_url = "%s?client_id=%s&response_type=code&scope=%s&redirect_uri=%s&nonce=%s&state=%s" % (
-                            endpoints['AUTHORIZATION_ENDPOINT'],
-                            'ARlTkRCeyehGfnIppINH9U4fADhTpQeCkCdOBMmD6ZFiER04oSOZmQ8QYBqJ',
+                            endpoints['SANDBOX_ENDPOINT'],
+                            'ThruPay',
                             'openid',
-                            '127.0.0.1:8000\index', # Fill this in with a real url
+                            'http://127.0.0.1:8000', # Fill this in with a real url
                             nonce,
                             state)
 
