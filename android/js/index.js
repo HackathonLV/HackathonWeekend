@@ -154,7 +154,7 @@ var app = {
                 break;
             }
 
-            $( "#list" ).hide();
+            $( "#info" ).hide();
 
             itemCount++;
             $( "#list" ).listview( "refresh" ).find( ".ui-li.border" ).removeClass( "border" );
